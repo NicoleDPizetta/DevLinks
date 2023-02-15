@@ -29,13 +29,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS custom properties
 - CSS animations
 - Flexbox
-- CSS Grid
 
 ## 🚀 Preview site
 
 O DevLinks é um agregador de links para usar como cartão de visitas online.
 
-- [Clique aqui](https://nicoledpizetta.github.io/DevLinks)
+- [Clique aqui](https://nicoledpizetta.github.io/DevLinks/)
 
 ## 🚀 Screenshots
 

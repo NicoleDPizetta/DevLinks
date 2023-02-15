@@ -98,7 +98,6 @@ body * {
 }
 
 /* -------------------------------- LINKS -------------------------------- */
-
 ul {
     list-style: none;
     display: flex;
@@ -149,7 +148,6 @@ ul li a:hover {
 }
 
 /* -------------------------------- FOOTER -------------------------------- */
-
 footer {
     padding: 24px;
     text-align: center;
@@ -157,7 +155,6 @@ footer {
 }
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
-
 @media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/Desktop-Darkmode.jpg);
@@ -169,7 +166,6 @@ footer {
 }
 
 /* -------------------------------- ANIMATIONS -------------------------------- */
-
 @keyframes slide-in {
     from {
         left: 0;
