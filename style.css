@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* O cálculo de margens, paddings e larguras são feitos a partir da borda da caixa */
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/Mobile-Darkmode.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.502);
+    --surface-color: rgba(255, 255, 255, 0.102);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --social-link-hover: rgba(255, 255, 255, 0.2);
+    --switch-svg: url(./assets/MoonStars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/Mobile-Lightmode.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.502);
+    --surface-color: rgba(0, 0, 0, 0.051);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --social-link-hover: rgba(0, 0, 0, 0.102);
+    --switch-svg: url(./assets/Sun.svg);
+}
+
+body {
+    /* background-image: url(./assets/Mobile-Dark\ mode.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; */
+
+    /* Dá para transformar todas as propriedades acima em uma "shorthand/atalho" */
+    background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* -------------------------------- PROFILE -------------------------------- */
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 500;
+    /* font-size: 16px; Não precisa deixar, pois 16px é o padrão dos navegadores*/
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* -------------------------------- SWITCH -------------------------------- */
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-svg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    /* A partir daqui estamos posicionando o botão do switch no meio do "caminho" dele */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1; /* Aqui definimos que esse elemento está na camada de cima, por isso consegue sobrepor o elemento da camada debaixo */
+    transform: translateY(-50%);
+    animation: slide-back 0.2s;
+}
+
+.light #switch button {
+    animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--social-link-hover);
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+/* -------------------------------- LINKS -------------------------------- */
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    --webkit-backdrop-filter: blur(4px);
+    /* O webkit serve para dar suporte aos navegadores que não tem nativamente para essa ferramenta */
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* -------------------------------- SOCIAL LINKS -------------------------------- */
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background: var(--social-link-hover);
+    padding: 16px;
+}
+
+/* -------------------------------- FOOTER -------------------------------- */
+
+footer {
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
+
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/Desktop-Darkmode.jpg);
+    }
+
+    .light {
+        --bg-url: url(./assets/Desktop-Lightmode.jpg);
+    }
+}
+
+/* -------------------------------- ANIMATIONS -------------------------------- */
+
+/* O nome da keyframe a gente que escolhe */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
