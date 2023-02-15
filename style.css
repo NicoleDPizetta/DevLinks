@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* O cálculo de margens, paddings e larguras são feitos a partir da borda da caixa */
 }
 
 :root {
@@ -26,12 +25,6 @@
 }
 
 body {
-    /* background-image: url(./assets/Mobile-Dark\ mode.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover; */
-
-    /* Dá para transformar todas as propriedades acima em uma "shorthand/atalho" */
     background: var(--bg-url) no-repeat top center/cover;
     height: 100vh;
 }
@@ -60,7 +53,6 @@ body * {
 
 #profile p {
     font-weight: 500;
-    /* font-size: 16px; Não precisa deixar, pois 16px é o padrão dos navegadores*/
     line-height: 24px;
     margin-top: 8px;
 }
@@ -78,11 +70,10 @@ body * {
     background: white var(--switch-svg) no-repeat center;
     border: 0;
     border-radius: 50%;
-    /* A partir daqui estamos posicionando o botão do switch no meio do "caminho" dele */
     position: absolute;
     top: 50%;
     left: 0;
-    z-index: 1; /* Aqui definimos que esse elemento está na camada de cima, por isso consegue sobrepor o elemento da camada debaixo */
+    z-index: 1;
     transform: translateY(-50%);
     animation: slide-back 0.2s;
 }
@@ -125,7 +116,6 @@ ul li a {
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
     --webkit-backdrop-filter: blur(4px);
-    /* O webkit serve para dar suporte aos navegadores que não tem nativamente para essa ferramenta */
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s;
@@ -180,11 +170,11 @@ footer {
 
 /* -------------------------------- ANIMATIONS -------------------------------- */
 
-/* O nome da keyframe a gente que escolhe */
 @keyframes slide-in {
     from {
         left: 0;
     }
+
     to {
         left: 50%;
     }
@@ -194,6 +184,7 @@ footer {
     from {
         left: 50%;
     }
+
     to {
         left: 0;
     }
